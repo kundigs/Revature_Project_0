@@ -1,0 +1,57 @@
+<div id="outer-div" style="text-align: center">
+    <form #picform="ngForm" (submit)="getCoords()">
+        <label for="addNum">Address Number</label>
+        <input type="text" name="addNum" id="addNum" [(ngModel)]="addNum">
+
+        <br>
+        <br>
+
+        <label for="street">Street</label>
+        <input type="text" name="street" id="street" [(ngModel)]="street">
+
+        <br>
+        <br>
+
+        <label for="city">City</label>
+        <input type="text" name="city" id="city" [(ngModel)]="city">
+
+        <br>
+        <br>
+
+        <label for="state">State</label>
+        <input type="text" name="state" id="state" [(ngModel)]="state">
+
+        <br>
+        <br>
+
+        <label for="country">Country</label>
+        <input type="text" name="country" id="country" [(ngModel)]="country">
+
+        <br>
+        <br>
+
+        <label for="date">Date</label>
+        <input type="date" required pattern="\d{4}-\d{2}-\d{2}" name="date" id="date" [(ngModel)]="date">
+
+        <br>
+        <br>
+
+        <input type="submit" value="Get Coordinates">
+    </form>
+
+    <br>
+    <br>
+    <div>Latitude: {{lat}}</div>
+    <div>Longitude: {{lon}}</div>
+    <!-- <br>
+    <br>
+    <button (click)="getImage()">Get Image</button> -->
+
+    <br>
+    <br>
+
+    <div>
+        <img [src]="picUrl" width=400 alt="">
+    </div>
+</div>
+

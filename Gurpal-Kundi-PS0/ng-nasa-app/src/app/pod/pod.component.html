@@ -1,0 +1,17 @@
+<div id="outer-div" style="text-align: center">
+    <form #picform="ngForm" (submit)="getPOD()">
+        <label for="date">Address Number</label>
+        <input type="date" required pattern="\d{4}-\d{2}-\d{2}" name="date" id="date" [(ngModel)]="date">
+        <br>
+        <br>
+        <input type="submit" value="Get Picture">
+    </form>
+
+    <br>
+
+    <div>
+        <img [src]="picUrl" width=200 alt="">
+    </div>
+</div>
+
+

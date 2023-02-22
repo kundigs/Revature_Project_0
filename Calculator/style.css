@@ -1,0 +1,23 @@
+.calculator {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(6, 100px);
+}
+
+.display {
+    grid-column: 1 / 5;
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 10px;
+}
+
+.display #input {
+    color: white;
+    font-size: 2.5rem;
+}
+
+.display #result {
+    color: white;
+    font-size: 2.5rem;
+}

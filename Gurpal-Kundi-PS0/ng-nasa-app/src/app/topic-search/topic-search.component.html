@@ -1,0 +1,30 @@
+<div id="outer-div" style="text-align: center">
+    <form #picform="ngForm" (submit)="getPics()">
+        <label for="numPics">Pick how many images you want</label>
+        <input type="number" name="numPics" id="numPics" [(ngModel)]="numPics" #numpics="ngModel" [required]="validation.required" [min]="validation.min" [max]="validation.max">
+        <div *ngIf="numpics.invalid && (numpics.dirty || numpics.touched)" class="alert">
+            <div *ngIf="numpics.errors?.['min']">
+                the min value is 1.
+            </div>
+            <div *ngIf="numpics.errors?.['max']">
+                the max value is 25.
+            </div>
+        </div>
+
+        <br>
+        <br>
+
+        <div>
+            <label for="keyword">What keyword will you look for?</label>
+            <input type="text" name="keyword" id="keyword" [(ngModel)] = "keyword">
+        </div>
+
+        <br>
+
+        <input type="submit" value="Get Images">
+    </form>
+
+    <div *ngFor="let pic of nasaPics">
+        <img [src]="pic.links[0].href" width=200 alt="">
+    </div>
+</div>
